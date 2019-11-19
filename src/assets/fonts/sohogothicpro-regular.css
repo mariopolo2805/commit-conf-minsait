@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'SohoGothicProRegular';
+  src: url('sohogothicpro-regular.eot');
+  src: url('sohogothicpro-regular.eot') format('embedded-opentype'),
+    url('sohogothicpro-regular.woff') format('woff'),
+    url('sohogothicpro-regular.ttf') format('truetype');
+}
