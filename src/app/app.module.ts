@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { IngestionComponent } from './ingestion/ingestion.component';
 import { WinnerComponent } from './winner/winner.component';
+import { ConfettiComponent } from './confetti/confetti.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     IngestionComponent,
-    WinnerComponent
+    WinnerComponent,
+    ConfettiComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,19 @@
-<div class="welcome">
-    <h2>¡Enhorabuena!</h2>
-    <br>
-    <p>El ganador es: {{name}}</p>
-    <p>Número de test: {{id}}</p>
-    <img src="../../assets/icon-industrias-10.png" alt="minsaitLogo">
+<div class="loading text-center" *ngIf="isLoading">
+  <div class="spinner-grow color-pink" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow color-purple" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow color-blue" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="winner" *ngIf="!isLoading">
+  <h2>¡Enhorabuena al ganador!</h2>
+  <br>
+  <h3>Con el test #{{ winner?.id || '-' }}</h3>
+  <br>
+  <h3>{{ winner?.fullname || '-' }}</h3>
+  <img src="../../assets/icon-industrias-10.png" alt="minsaitLogo">
 </div>

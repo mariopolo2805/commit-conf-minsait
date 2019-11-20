@@ -1,0 +1,28 @@
+#uploadFile {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0px auto;
+  color: #639fcb;
+  padding: 30px;
+  border: 1px solid #639fcb;
+  font-size: 15px;
+  line-height: 1;
+  font-family: "SohoGothicProRegular";
+  border-radius: 0;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: #639fcb;
+    color: #fff;
+  }
+}
+
+p {
+  margin: 16px;
+}

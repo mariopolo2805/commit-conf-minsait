@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WinnerService } from '../shared/winner.service';
+import { Person } from '../shared/person.model';
 
 @Component({
   selector: 'app-winner',
@@ -6,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./winner.component.scss']
 })
 export class WinnerComponent implements OnInit {
-  public name: string;
-  public id: number;
-  public encrytpEmail: string;
 
-  constructor() { }
+  winner: Person = null;
+  isLoading = true;
+
+  constructor(private winnerService: WinnerService) { }
 
   ngOnInit() {
-    this.name = 'Juan García Pérez';
-    this.id = 5;
-
+    this.winner = this.winnerService.winner;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
   }
 }

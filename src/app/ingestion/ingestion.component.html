@@ -1,3 +1,20 @@
-<p>ingestion works!</p>
-<a routerLink="/winner" routerLinkActive="active">Siguiente</a>
-
+<div class="ingestion">
+  <h2>Comienza el sorteo</h2>
+  <br>
+  <div class="text-center">
+    <button class="btn" (click)="onBtnClick($event)">Subir fichero</button>
+  </div>
+  <input
+    type="file"
+    id="uploadFile"
+    name="uploadFile"
+    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+    (change)="onFileChange($event)"
+  >
+  <div *ngIf="file">
+    <p class="text-center">{{ file?.name || '-' }}</p>
+    <div class="text-center">
+      <a routerLink="/winner" routerLinkActive="active">Comenzar sorteo</a>
+    </div>
+  </div>
+</div>

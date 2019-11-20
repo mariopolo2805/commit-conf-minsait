@@ -1,7 +1,26 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .color-pink {
+    color: #fde3d4;
+  }
+
+  .color-purple {
+    color: #7874b4;
+  }
+
+  .color-blue {
+    color: #639fcb;
+  }
+}
+
 img {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    width: auto;
-    height: auto;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: auto;
+  height: auto;
 }
