@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('commit-conf-randomize app is running!');
+    expect(page.getTitleText()).toEqual('commit-conf-minsait app is running!');
   });
 
   afterEach(async () => {
