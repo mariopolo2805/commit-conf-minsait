@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { WelcomeComponent } from './welcome/welcome.component';
-import { IngestionComponent } from './ingestion/ingestion.component';
-import { WinnerComponent } from './winner/winner.component';
+import { WelcomeComponent } from './routes/welcome/welcome.component';
+import { IngestionComponent } from './routes/ingestion/ingestion.component';
+import { WinnerComponent } from './routes/winner/winner.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },

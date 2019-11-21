@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../shared/app.service';
-import { Person } from '../shared/person.model';
+import { AppService } from '../../shared/services/app.service';
+import { Person } from '../../shared/models/person.model';
 
 import * as XLSX from 'xlsx';
 

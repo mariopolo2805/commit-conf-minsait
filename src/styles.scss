@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
   font-family: "Playfair Display";
   color: #1a3b47;
   font-size: 1.2rem;
@@ -23,50 +24,12 @@ body {
     flex-direction: column;
     position: relative;
 
-    nav.navbar {
-      padding: 1rem;
-      height: $navbar-height;
-    }
-
-    .video-content {
+    app-media {
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-grow: 1;
       max-height: calc(100% - #{$navbar-height});
-
-      video {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .app-content {
-      position: absolute;
-      display: flex;
-      width: 100%;
-      height: 100%;
-
-      &__card-container {
-        margin: auto;
-
-        .card {
-          width: 600px;
-          height: 300px;
-          margin-top: $navbar-height;
-          border-radius: 0;
-          opacity: 0;
-          transition: opacity 1.5s;
-
-          a {
-            font-family: "SohoGothicProRegular";
-            color: #7874b4;
-          }
-
-          &.loaded {
-            opacity: 0.9;
-          }
-        }
-      }
     }
   }
 }

@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { IngestionComponent } from './ingestion/ingestion.component';
-import { WinnerComponent } from './winner/winner.component';
+import { WelcomeComponent } from './routes/welcome/welcome.component';
+import { IngestionComponent } from './routes/ingestion/ingestion.component';
+import { WinnerComponent } from './routes/winner/winner.component';
 import { ConfettiComponent } from './confetti/confetti.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ConfettiComponent } from './confetti/confetti.component';
     WelcomeComponent,
     IngestionComponent,
     WinnerComponent,
-    ConfettiComponent
+    ConfettiComponent,
+    NavbarComponent,
+    MediaComponent
   ],
   imports: [
     BrowserModule,

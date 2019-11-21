@@ -1,0 +1,29 @@
+.app-content {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: calc(100% - 62px);
+  margin-top: 62px;
+
+  &__card-container {
+    margin: auto;
+
+    .card {
+      width: 600px;
+      height: 300px;
+      margin-top: 62px;
+      border-radius: 0;
+      opacity: 0;
+      transition: opacity 1.5s;
+
+      a {
+        font-family: "SohoGothicProRegular";
+        color: #7874b4;
+      }
+
+      &.loaded {
+        opacity: 0.9;
+      }
+    }
+  }
+}
