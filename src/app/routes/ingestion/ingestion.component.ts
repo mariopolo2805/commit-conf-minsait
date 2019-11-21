@@ -14,7 +14,7 @@ export class IngestionComponent implements OnInit {
   persons: Person[] = null;
   file: File;
 
-  constructor(private appService: AppService) {
+  constructor(public appService: AppService) {
   }
 
   ngOnInit() {

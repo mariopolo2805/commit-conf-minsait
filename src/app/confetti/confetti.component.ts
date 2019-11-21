@@ -10,7 +10,7 @@ export class ConfettiComponent implements OnInit {
 
   confetti: void[] = new Array(150);
 
-  constructor(private appService: AppService) { }
+  constructor(public appService: AppService) { }
 
   ngOnInit() {
   }

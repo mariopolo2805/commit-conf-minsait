@@ -8,7 +8,7 @@ import { AppService } from '../../shared/services/app.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private appService: AppService) { }
+  constructor(public appService: AppService) { }
 
   ngOnInit() {
     this.appService.fadeIn();

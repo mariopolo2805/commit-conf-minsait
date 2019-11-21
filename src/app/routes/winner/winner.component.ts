@@ -11,7 +11,7 @@ export class WinnerComponent implements OnInit {
 
   winner: Person = null;
 
-  constructor(private appService: AppService) { }
+  constructor(public appService: AppService) { }
 
   ngOnInit() {
     this.winner = this.appService.winner;
