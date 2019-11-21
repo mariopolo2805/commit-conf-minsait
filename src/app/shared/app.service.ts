@@ -6,6 +6,7 @@ import { Person } from '../shared/person.model';
 })
 export class AppService {
 
+  persons: Person[] = null;
   winner: Person = null;
   isLoading = true;
 
@@ -20,5 +21,4 @@ export class AppService {
       $('.card').addClass('loaded');
     }, 500);
   }
-
 }

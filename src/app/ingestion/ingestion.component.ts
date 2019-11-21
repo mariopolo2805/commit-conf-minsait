@@ -11,9 +11,11 @@ import * as XLSX from 'xlsx';
 })
 export class IngestionComponent implements OnInit {
 
+  persons: Person[] = null;
   file: File;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+  }
 
   ngOnInit() {
     this.appService.fadeIn();
@@ -37,21 +39,38 @@ export class IngestionComponent implements OnInit {
     reader.readAsBinaryString(target.files[0]);
   }
 
-  generatePersons(data: any) {
-    data.shift();
-    const persons: Person[] = data.map((elem: any) => {
+  generatePersons(data: any[]) {
+    const dataTransformed = this.transformData(data);
+    this.appService.persons = dataTransformed.map((elem: any) => {
       const person: Person = {
         id: elem[0],
-        fullname: elem[13]
+        fullname: elem[1],
+        email: elem[2],
       };
       return person;
     });
-    this.getRandomPerson(persons);
+  }
+
+  transformData(data: any[]) {
+    let dataTransformed = [...data];
+    dataTransformed.shift();
+    dataTransformed = dataTransformed.filter((el) => el[0]);
+    dataTransformed = this.removeDuplicates(dataTransformed);
+    return dataTransformed;
+  }
+
+  removeDuplicates(data: any[]) {
+    return data.filter((elem, index, self) => index === self.findIndex(
+      (t) => (t[0] === elem[0] || t[2] === elem[2])
+    ));
+  }
+
+  onAnchorClick() {
+    this.getRandomPerson(this.appService.persons);
   }
 
   getRandomPerson(persons: Person[]) {
     const random = Math.floor(Math.random() * persons.length);
     this.appService.winner = persons[random];
-    console.log(this.appService.winner);
   }
 }
