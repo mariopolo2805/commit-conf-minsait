@@ -2,7 +2,7 @@
   <h2>Comienza el sorteo</h2>
   <br>
   <div class="text-center">
-    <button class="btn" (click)="onBtnClick($event)">Subir fichero</button>
+    <button class="btn" (click)="onBtnClick()">Subir fichero</button>
   </div>
   <input
     type="file"
@@ -14,7 +14,7 @@
   <div *ngIf="file || appService.winner">
     <p class="text-center">{{ file?.name || '😓 ¡Vaya! ¿No tenemos ganador?' }}</p>
     <div class="text-center">
-      <a routerLink="/winner" routerLinkActive="active" (click)="onAnchorClick($event)">Comenzar sorteo</a>
+      <a routerLink="/winner" routerLinkActive="active" (click)="onAnchorClick()">Comenzar sorteo</a>
     </div>
   </div>
 </div>
