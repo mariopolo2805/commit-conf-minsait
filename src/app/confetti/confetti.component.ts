@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../shared/app.service';
 
 @Component({
   selector: 'app-confetti',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfettiComponent implements OnInit {
 
-  constructor() { }
+  confetti: void[] = new Array(150);
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
   }

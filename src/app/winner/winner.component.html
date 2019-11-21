@@ -1,4 +1,4 @@
-<div class="loading text-center" *ngIf="isLoading">
+<div class="loading text-center" *ngIf="appService.isLoading">
   <div class="spinner-grow color-pink" role="status">
     <span class="sr-only">Loading...</span>
   </div>
@@ -9,7 +9,7 @@
     <span class="sr-only">Loading...</span>
   </div>
 </div>
-<div class="winner" *ngIf="!isLoading">
+<div class="winner" *ngIf="!appService.isLoading">
   <h2>¡Enhorabuena al ganador!</h2>
   <br>
   <h3>Con el test #{{ winner?.id || '-' }}</h3>

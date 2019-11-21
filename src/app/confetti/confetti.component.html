@@ -1,1 +1,3 @@
-<p>confetti works!</p>
+<div *ngIf="appService.winner && !appService.isLoading">
+  <div *ngFor="let user of confetti; index as i" class="confetti-{{i}}"></div>
+</div>

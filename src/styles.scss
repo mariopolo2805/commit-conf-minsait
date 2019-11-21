@@ -2,7 +2,8 @@ $navbar-height: 62px;
 
 @import 'assets/fonts/sohogothicpro-regular.css';
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -15,72 +16,57 @@ body {
   color: #1a3b47;
   font-size: 1.2rem;
 
-  nav.navbar {
-    padding: 1rem;
-    height: $navbar-height;
-  }
-
-  .video-content {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    max-height: calc(100% - #{$navbar-height});
-
-    video {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .app-content {
-    position: absolute;
-    display: flex;
-    width: 100%;
+  app-root {
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
-    &__card-container {
-      margin: auto;
+    nav.navbar {
+      padding: 1rem;
+      height: $navbar-height;
+    }
 
-      .card {
-        width: 600px;
-        height: 300px;
-        margin-top: $navbar-height;
-        border-radius: 0;
-        a {
-          font-family: "SohoGothicProRegular";
-          color: #7874b4;
-        }
+    .video-content {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      max-height: calc(100% - #{$navbar-height});
+
+      video {
+        width: 100%;
+        height: 100%;
       }
     }
-  }
-}
 
+    .app-content {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
 
+      &__card-container {
+        margin: auto;
 
-[class|="confetti"] {
-  position: absolute;
-}
+        .card {
+          width: 600px;
+          height: 300px;
+          margin-top: $navbar-height;
+          border-radius: 0;
+          opacity: 0;
+          transition: opacity 1.5s;
 
-$colors: (#d13447, #ffbf00, #263672);
+          a {
+            font-family: "SohoGothicProRegular";
+            color: #7874b4;
+          }
 
-@for $i from 0 through 150 {
-  $w: random(8);
-  $l: random(100);
-  .confetti-#{$i} {
-    width: #{$w}px;
-    height: #{$w*0.4}px;
-    background-color: nth($colors, random(3));
-    top: -10%;
-    left: unquote($l+"%");
-    opacity: random() + 0.5;
-    transform: rotate(#{random()*360}deg);
-    animation: drop-#{$i} unquote(4+random()+"s") unquote(random()+"s") infinite;
-  }
-
-  @keyframes drop-#{$i} {
-    100% {
-      top: 110%;
-      left: unquote($l+random(15)+"%");
+          &.loaded {
+            opacity: 0.9;
+          }
+        }
+      }
     }
   }
 }

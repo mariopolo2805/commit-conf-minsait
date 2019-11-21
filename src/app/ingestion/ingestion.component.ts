@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WinnerService } from '../shared/winner.service';
+import { AppService } from '../shared/app.service';
 import { Person } from '../shared/person.model';
 
 import * as XLSX from 'xlsx';
@@ -13,9 +13,10 @@ export class IngestionComponent implements OnInit {
 
   file: File;
 
-  constructor(private winnerService: WinnerService) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.fadeIn();
   }
 
   onBtnClick() {
@@ -50,7 +51,7 @@ export class IngestionComponent implements OnInit {
 
   getRandomPerson(persons: Person[]) {
     const random = Math.floor(Math.random() * persons.length);
-    this.winnerService.winner = persons[random];
-    console.log(this.winnerService.winner);
+    this.appService.winner = persons[random];
+    console.log(this.appService.winner);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WinnerService } from '../shared/winner.service';
+import { AppService } from '../shared/app.service';
 import { Person } from '../shared/person.model';
 
 @Component({
@@ -10,14 +10,14 @@ import { Person } from '../shared/person.model';
 export class WinnerComponent implements OnInit {
 
   winner: Person = null;
-  isLoading = true;
 
-  constructor(private winnerService: WinnerService) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.winner = this.winnerService.winner;
+    this.winner = this.appService.winner;
+    this.appService.fadeIn();
     setTimeout(() => {
-      this.isLoading = false;
+      this.appService.isLoading = false;
     }, 5000);
   }
 }
